@@ -1,0 +1,168 @@
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import styled from "styled-components";
+
+import front from "../../assets/Images/frontImage.jpg";
+import back from "../../assets/Images/backImage.jpg";
+import aprender from "../../assets/Images/aprender.jpg";
+
+const Bottom = () => {
+	useEffect(() => {
+		const tlDown = gsap.timeline();
+
+		tlDown.from(".square-image img", {
+			scale: 1.4,
+			ease: "expo.easeInOut",
+			stagger: {
+				amount: 0.6,
+			},
+			duration: 1.6,
+			delay: 4.5,
+		});
+
+		return () => {
+			tlDown.kill();
+		};
+	}, []);
+
+	return (
+		<MainContainer>
+			<Content>
+				<div className="square">
+					<div className="square-details">
+						<span>Años como</span>
+						<h2>Frontend Developer</h2>
+					</div>
+
+					<div className="square-image">
+						<img src={front} alt="frontend developer" />
+					</div>
+				</div>
+
+				<div className="square">
+					<div className="square-details">
+						<span>También he realizado aplicaciones con</span>
+						<h2>MERN stack</h2>
+					</div>
+
+					<div className="square-image">
+						<img src={back} alt="frontend developer" />
+					</div>
+				</div>
+
+				<div className="square">
+					<div className="square-details">
+						<span>Dispuesto a aprender</span>
+						<h2>Nuevas tecnologías</h2>
+					</div>
+
+					<div className="square-image">
+						<img src={aprender} alt="frontend developer" />
+					</div>
+				</div>
+			</Content>
+		</MainContainer>
+	);
+};
+
+export default Bottom;
+
+const MainContainer = styled.div`
+	min-width: 100vw;
+	height: 50vh;
+	position: relative;
+
+	font-family: "Ubuntu Mono", monospace;
+`;
+
+const Content = styled.div`
+	// padding-top: 10rem; // padding top 💥
+	display: flex;
+	width: 100%;
+
+	.square {
+		position: relative;
+		background: black;
+		cursor: pointer;
+
+		&:hover {
+			.square-image {
+				opacity: 0.3;
+			}
+		}
+
+		.square-details {
+			width: 33.3333vw;
+			height: 50vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 32px;
+			box-sizing: border-box;
+			z-index: 1;
+			position: relative;
+
+			/* @include media("<=tablet") {
+				width: 100vw;
+			}
+			@include media("<=phone") {
+				padding: 16px;
+			} */
+
+			span {
+				margin-top: 156px;
+				font-size: 1.6rem;
+				opacity: 0.8;
+				/* color: white; */
+				color: ${(props) => props.theme.body};
+				font-weight: 600;
+
+				/* @include media("<=desktop", ">tablet") {
+					font-size: 1.4rem;
+				}
+				@include media("<=phone") {
+					font-size: 1.2rem;
+					line-height: 2.2rem;
+				} */
+			}
+
+			h2 {
+				font-size: 2.4rem;
+				line-height: 3.4rem;
+				width: 85%;
+				margin-top: 16px;
+				/* color: white; */
+				color: ${(props) => props.theme.body};
+
+				font-family: "Ubuntu Mono", monospace;
+
+				/* @include media("<=desktop", ">tablet") {
+					font-size: 2rem;
+					line-height: 2.4rem;
+				}
+				@include media("<=phone") {
+					font-size: 1.7rem;
+					line-height: 2.2rem;
+					margin-top: 8px;
+				} */
+			}
+		}
+
+		.square-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			opacity: 0.45;
+			transition: 0.4s cubic-bezier(0.6, -0.05, 0.1, 0.99);
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+`;
