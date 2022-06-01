@@ -50,17 +50,17 @@ const Top = ({ contactModalToggler, loaded }) => {
 			<Content>
 				<div className="line">
 					<span className="span">
-						Hola, soy Ariel Godoy y hago desarrollo web
+						Hi, I'm Ariel Godoy and I do web development
 					</span>
 				</div>
 
 				<div className="line">
-					<span className="span">en ambiente JavaScript.</span>
+					<span className="span">in JavaScript environment.</span>
 				</div>
 
 				<div className="btn-container">
 					<div className="btn" onClick={contactModalToggler}>
-						Contáctame!
+						Contact me!
 						<RightArrow />
 					</div>
 				</div>

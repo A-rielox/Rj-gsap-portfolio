@@ -32,7 +32,7 @@ const Bottom = ({ loaded }) => {
 			<Content>
 				<div className="square">
 					<div className="square-details">
-						<span>Años como</span>
+						<span>Some years as</span>
 						<h2>Frontend Developer</h2>
 					</div>
 
@@ -43,7 +43,7 @@ const Bottom = ({ loaded }) => {
 
 				<div className="square">
 					<div className="square-details">
-						<span>También he realizado aplicaciones con</span>
+						<span>I have also made applications with</span>
 						<h2>MERN stack</h2>
 					</div>
 
@@ -54,8 +54,8 @@ const Bottom = ({ loaded }) => {
 
 				<div className="square">
 					<div className="square-details">
-						<span>Dispuesto a aprender</span>
-						<h2>Nuevas tecnologías</h2>
+						<span>Willing to learn</span>
+						<h2>New technologies</h2>
 					</div>
 
 					<div className="square-image">

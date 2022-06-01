@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import gsap from "gsap";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import GlobalStyle from "./globalStyles";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { lightTheme /* , DarkTheme */ } from "./components/Themes";
 
 // prettier-ignore

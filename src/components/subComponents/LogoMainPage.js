@@ -82,13 +82,15 @@ const LogoMainPage = ({ loaded }) => {
 	return (
 		<Container color={location.pathname} atHome={atHome}>
 			<div className="logo-wrapper">
-				<MainLogo
-					onClick={() => setMenuState(!menuState)}
-					/* width, height y fill en styled.div */
-					variants={pathVariants}
-					initial={"hidden"}
-					animate={"visible"}
-				/>
+				<div className="main-logo">
+					<MainLogo
+						onClick={() => setMenuState(!menuState)}
+						/* width, height y fill en styled.div */
+						variants={pathVariants}
+						initial={"hidden"}
+						animate={"visible"}
+					/>
+				</div>
 
 				{atHome && (
 					<Text
@@ -127,8 +129,10 @@ const Container = styled.div`
 	.logo-wrapper {
 		display: ${(props) => (props.atHome === true ? "flex" : null)};
 		align-items: center;
-		/* justify-content: center; */
-		cursor: pointer;
+
+		.main-logo {
+			cursor: pointer;
+		}
 	}
 
 	svg {

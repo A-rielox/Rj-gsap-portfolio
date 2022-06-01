@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { gsap } from "gsap";
 
@@ -67,12 +67,7 @@ const Menu = ({ menuState }) => {
 				<div className="content" ref={(el) => (revealMenu = el)}>
 					<nav>
 						<span>
-							<Link
-								// onMouseEnter={handleHover}
-								// onMouseLeave={handleHoverExit}
-								ref={(el) => (link1 = el)}
-								to="/"
-							>
+							<Link ref={(el) => (link1 = el)} to="/">
 								Home
 							</Link>
 						</span>
@@ -84,27 +79,32 @@ const Menu = ({ menuState }) => {
 						</span>
 
 						<span>
-							<Link
-								// onMouseEnter={handleHover}
-								// onMouseLeave={handleHoverExit}
-								ref={(el) => (link3 = el)}
-								to="/about"
-							>
+							<Link ref={(el) => (link3 = el)} to="/about">
 								About
 							</Link>
 						</span>
 
 						<span>
-							<Link
-								// onMouseEnter={handleHover}
-								// onMouseLeave={handleHoverExit}
-								ref={(el) => (link4 = el)}
-								to="/work"
-							>
+							<Link ref={(el) => (link4 = el)} to="/work">
 								Work
 							</Link>
 						</span>
 					</nav>
+
+					<div className="footer-div">
+						<span>
+							&copy; {new Date().getFullYear()} My portfolio - All rights
+							reserved.
+						</span>
+
+						<span className="heart">
+							Made with &nbsp;<div className="beat">💓</div>&nbsp; by
+							&nbsp;
+							<a href=" " target="_blank" rel="noopener noreferrer">
+								A-rielox
+							</a>
+						</span>
+					</div>
 				</div>
 			</div>
 		</MainContainer>
@@ -112,6 +112,11 @@ const Menu = ({ menuState }) => {
 };
 
 export default Menu;
+
+const beat = keyframes`
+   from {  transform:  scale(1) }
+   to {  transform:  scale(1.5) }
+`;
 
 const MainContainer = styled.section`
 	.menu {
@@ -175,6 +180,26 @@ const MainContainer = styled.section`
 							color: #36254e;
 						}
 					}
+				}
+			}
+
+			.footer-div {
+				position: absolute;
+				bottom: 50px;
+				right: 50px;
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+
+				span {
+					display: flex;
+					/* white-space: nowrap; */
+				}
+
+				.beat {
+					display: inline-block;
+					animation: ${beat} 0.8s linear infinite alternate;
 				}
 			}
 		}
