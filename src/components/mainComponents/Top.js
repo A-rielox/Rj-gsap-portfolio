@@ -26,8 +26,8 @@ const Top = ({ contactModalToggler, loaded }) => {
 				})
 				.to(".btn", {
 					left: 0,
-					duration: 1,
-					delay: 3,
+					duration: 1.5,
+					delay: 1,
 				});
 
 			return () => {
