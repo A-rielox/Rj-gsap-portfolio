@@ -1,142 +1,180 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import gsap from "gsap";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { Logo as MainLogo } from "../AllSvgs";
+import Menu from "./Menu";
 
-import { Logo as MainLogo } from '../AllSvgs';
-import { TiArrowBackOutline } from 'react-icons/ti';
+const LogoMainPage = ({ loaded }) => {
+	const location = useLocation();
+	const [initialLoad, setInitialLoad] = useState(true);
+	const [menuState, setMenuState] = useState(false);
+	// PARA PAGE CHANGES
+	useEffect(() => {
+		if (!initialLoad) {
+			setMenuState(!menuState);
+		}
+	}, [location]);
 
-const pathVariants = {
-   hidden: {
-      opacity: 0,
-      pathLength: 0,
-   },
-   visible: {
-      opacity: 1,
-      pathLength: 1,
+	useEffect(() => {
+		setInitialLoad(false);
 
-      transition: {
-         duration: 2,
-         ease: 'easeInOut',
-      },
-   },
-};
+		gsap.from(".logo-wrapper", {
+			opacity: 0,
+			delay: 4,
+			duration: 2,
+		});
+	}, []);
 
-const textVariants = {
-   hidden: {
-      opacity: 0,
-      x: -50,
-   },
-   visible: {
-      opacity: 1,
-      x: -10,
+	let atHome = location.pathname === "/";
 
-      transition: {
-         duration: 2,
-         // delay: 2,
-         ease: 'easeInOut',
-      },
-   },
-};
+	const pathVariants = {
+		hidden: {
+			opacity: 0,
+			pathLength: 0,
+		},
+		visible: {
+			opacity: 1,
+			pathLength: 1,
 
-const LogoMainPage = ({ color }) => {
-   const location = useLocation();
+			transition: {
+				duration: !loaded ? 4 : 0,
+				ease: "easeInOut",
+				delay: !loaded ? 5 : 0,
+			},
+		},
+	};
 
-   let atHome = location.pathname === '/';
+	const textVariants = {
+		hidden: {
+			opacity: 0,
+			x: -50,
+		},
+		visible: {
+			opacity: 1,
+			x: -10,
 
-   return (
-      <Container color={color} atHome={atHome}>
-         <Link to="/">
-            <MainLogo
-               /* width, height y fill en styled.div */
-               variants={pathVariants}
-               initial={'hidden'}
-               animate={'visible'}
-            />
+			transition: {
+				duration: !loaded ? 2 : 0,
+				delay: !loaded ? 5 : 0,
+				ease: "easeInOut",
+			},
+		},
+	};
 
-            {atHome ? (
-               <Text
-                  color={color}
-                  variants={textVariants}
-                  initial="hidden"
-                  animate="visible"
-               >
-                  -rielox
-               </Text>
-            ) : (
-               <TextNoHome color={color}>
-                  <TiArrowBackOutline />
-                  Home
-               </TextNoHome>
-            )}
-         </Link>
-      </Container>
-   );
+	const noTextVariants = {
+		hidden: {
+			opacity: 0,
+		},
+		visible: {
+			opacity: 1,
+
+			transition: {
+				duration: !loaded ? 2 : 0,
+				delay: !loaded ? 5 : 0,
+				ease: "easeInOut",
+			},
+		},
+	};
+
+	return (
+		<Container color={location.pathname} atHome={atHome}>
+			<div className="logo-wrapper">
+				<MainLogo
+					onClick={() => setMenuState(!menuState)}
+					/* width, height y fill en styled.div */
+					variants={pathVariants}
+					initial={"hidden"}
+					animate={"visible"}
+				/>
+
+				{atHome && (
+					<Text
+						color={location.pathname}
+						variants={textVariants}
+						initial="hidden"
+						animate="visible"
+					>
+						-rielox
+					</Text>
+				)}
+			</div>
+			<TextNoHome
+				color={location.pathname}
+				variants={noTextVariants}
+				initial="hidden"
+				animate="visible"
+			>
+				Menu
+			</TextNoHome>
+
+			<Menu menuState={menuState} />
+		</Container>
+	);
 };
 
 export default LogoMainPage;
 
 const Container = styled.div`
-   position: fixed;
-   top: 2rem;
-   left: 2rem;
-   z-index: 100;
-   /* width: 20vw; */
-   width: 150px;
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	z-index: 100;
+	width: 150px;
 
-   a {
-      /* display: flex; */
-      display: ${props => (props.atHome === true ? 'flex' : null)};
-      align-items: center;
-   }
+	.logo-wrapper {
+		display: ${(props) => (props.atHome === true ? "flex" : null)};
+		align-items: center;
+		/* justify-content: center; */
+		cursor: pointer;
+	}
 
-   svg {
-      /* width: 4vw; */
-      width: calc(2em + 1vw);
-      height: auto;
-      fill: ${props =>
-         props.color === 'light'
-            ? `rgba(${props.theme.textRgba},0.2)`
-            : `rgba(${props.theme.bodyRgba},0.8)`};
-      /* fill: ${props => `rgba(${props.theme.textRgba},0.2)`}; */
+	svg {
+		width: calc(2em + 1vw);
+		height: auto;
+		fill: ${(props) =>
+			props.color === "/about"
+				? `rgba(${props.theme.bodyRgba},0.8)`
+				: `rgba(${props.theme.textRgba},0.2)`};
 
-      overflow: visible;
-      stroke-linejoin: round;
-      stroke-linecap: round;
+		overflow: visible;
+		stroke-linejoin: round;
+		stroke-linecap: round;
 
-      path {
-         stroke: ${props =>
-            props.color === 'light'
-               ? `rgba(${props.theme.textRgba},0.8)`
-               : `rgba(${props.theme.bodyRgba},0.8)`};
-         /* stroke: ${props => props.theme.text}; */
-      }
-   }
+		path {
+			stroke: ${(props) =>
+				props.color === "/about"
+					? `rgba(${props.theme.bodyRgba},0.8)`
+					: `rgba(${props.theme.textRgba},0.8)`};
+		}
+	}
 `;
 
 const Text = styled(motion.span)`
-   /* font-size: 2rem; */
-   font-size: calc(1em + 0.5vw);
+	/* font-size: 2rem; */
+	font-size: calc(1em + 0.5vw);
 
-   color: ${props =>
-      props.color === 'light'
-         ? `rgba(${props.theme.textRgba},1)`
-         : `rgba(${props.theme.bodyRgba},0.8)`};
+	color: ${(props) =>
+		props.color === "/about"
+			? `rgba(${props.theme.bodyRgba},0.8)`
+			: `rgba(${props.theme.textRgba},1)`};
 `;
 
-const TextNoHome = styled.div`
-   display: flex;
-   align-items: center;
-   font-size: calc(0.7em + 0.1vw);
-   margin-left: -0.5rem;
+const TextNoHome = styled(motion.div)`
+	display: flex;
+	align-items: center;
+	font-size: calc(0.7em + 0.1vw);
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
 
-   color: ${props =>
-      props.color === 'light'
-         ? `rgba(${props.theme.textRgba},.5)`
-         : `rgba(${props.theme.bodyRgba},0.8)`};
+	color: ${(props) =>
+		props.color === "/about"
+			? `rgba(${props.theme.bodyRgba},0.8)`
+			: `rgba(${props.theme.textRgba},0.5)`};
 
-   svg {
-      font-size: calc(0.4em + 0.1vw);
-   }
+	svg {
+		font-size: calc(0.4em + 0.1vw);
+	}
 `;

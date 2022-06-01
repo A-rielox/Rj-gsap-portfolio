@@ -6,23 +6,25 @@ import front from "../../assets/Images/frontImage.jpg";
 import back from "../../assets/Images/backImage.jpg";
 import aprender from "../../assets/Images/aprender.jpg";
 
-const Bottom = () => {
+const Bottom = ({ loaded }) => {
 	useEffect(() => {
-		const tlDown = gsap.timeline();
+		if (!loaded) {
+			const tlDown = gsap.timeline();
 
-		tlDown.from(".square-image img", {
-			scale: 1.4,
-			ease: "expo.easeInOut",
-			stagger: {
-				amount: 0.6,
-			},
-			duration: 1.6,
-			delay: 4.5,
-		});
+			tlDown.from(".square-image img", {
+				scale: 1.4,
+				ease: "expo.easeInOut",
+				stagger: {
+					amount: 0.6,
+				},
+				duration: 1.6,
+				delay: 4.5,
+			});
 
-		return () => {
-			tlDown.kill();
-		};
+			return () => {
+				tlDown.kill();
+			};
+		}
 	}, []);
 
 	return (
@@ -80,10 +82,19 @@ const Content = styled.div`
 	display: flex;
 	width: 100%;
 
+	@media screen and (max-width: 700px) {
+		flex-direction: column;
+	}
+
 	.square {
 		position: relative;
-		background: black;
+		background: #36254e;
+		/* background: black; */
 		cursor: pointer;
+
+		@media screen and (max-width: 700px) {
+			height: calc(50vh / 3);
+		}
 
 		&:hover {
 			.square-image {
@@ -102,6 +113,11 @@ const Content = styled.div`
 			z-index: 1;
 			position: relative;
 
+			@media screen and (max-width: 700px) {
+				width: 100vw;
+				height: calc(50vh / 3);
+			}
+
 			/* @include media("<=tablet") {
 				width: 100vw;
 			}
@@ -117,13 +133,14 @@ const Content = styled.div`
 				color: ${(props) => props.theme.body};
 				font-weight: 600;
 
-				/* @include media("<=desktop", ">tablet") {
-					font-size: 1.4rem;
+				@media screen and (max-width: 1100px) {
+					font-size: 1.3rem;
 				}
-				@include media("<=phone") {
+
+				@media screen and (max-width: 700px) {
+					margin-top: 10px;
 					font-size: 1.2rem;
-					line-height: 2.2rem;
-				} */
+				}
 			}
 
 			h2 {
@@ -136,15 +153,15 @@ const Content = styled.div`
 
 				font-family: "Ubuntu Mono", monospace;
 
-				/* @include media("<=desktop", ">tablet") {
+				@media screen and (max-width: 1100px) {
 					font-size: 2rem;
-					line-height: 2.4rem;
 				}
-				@include media("<=phone") {
-					font-size: 1.7rem;
+
+				@media screen and (max-width: 700px) {
+					margin-top: 10px;
+					font-size: 2rem;
 					line-height: 2.2rem;
-					margin-top: 8px;
-				} */
+				}
 			}
 		}
 
@@ -162,6 +179,10 @@ const Content = styled.div`
 				height: 100%;
 				width: 100%;
 				object-fit: cover;
+
+				@media screen and (max-width: 700px) {
+					display: none;
+				}
 			}
 		}
 	}

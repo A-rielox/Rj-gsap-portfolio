@@ -5,32 +5,36 @@ import gsap from "gsap";
 // TIMELINE
 // para no tener q usar ref y tener q pasarlas con prop drilling => usa clases y se hace directo
 
-const IntroOverlay = () => {
+const IntroOverlay = ({ loaded }) => {
 	useEffect(() => {
-		const tlOverlay = gsap.timeline();
+		if (!loaded) {
+			const tlOverlay = gsap.timeline();
 
-		tlOverlay
-			.to(".overlay-top", {
-				height: 0,
-				ease: "expo.inOut",
-				stagger: 0.4,
-				duration: 1.6,
-				delay: 3,
-			})
-			.to(".overlay-bottom", {
-				width: 0,
-				ease: "expo.easeInOut",
-				delay: -0.8,
-				stagger: {
-					amount: 0.8,
-				},
-				duration: 1.6,
-			})
-			.to(".overlay", { css: { display: "none" } });
+			tlOverlay
+				.to(".overlay-top", {
+					height: 0,
+					ease: "expo.inOut",
+					stagger: 0.4,
+					duration: 1.6,
+					delay: 3,
+				})
+				.to(".overlay-bottom", {
+					width: 0,
+					ease: "expo.easeInOut",
+					delay: -0.8,
+					stagger: {
+						amount: 0.8,
+					},
+					duration: 1.6,
+				})
+				.to(".overlay", { css: { display: "none" } });
 
-		return () => {
-			tlOverlay.kill();
-		};
+			return () => {
+				tlOverlay.kill();
+			};
+		} else {
+			gsap.to(".overlay", { css: { display: "none" }, duration: 0.01 });
+		}
 	}, []);
 
 	return (
@@ -110,29 +114,31 @@ const Wrapper = styled.div`
 			// left: 0; no se ocupa left xq con gsap se anima el width de izq a drch
 			right: 66.666%;
 
-			/* @include media('<=tablet') {
-               right: 0;
-               width: 100vw;
-            } */
+			@media screen and (max-width: 700px) {
+				top: 0;
+				right: 0;
+				width: 100vw;
+				height: calc(50vh / 3);
+			}
 
 			&:nth-child(2) {
 				right: 33.333%;
 
-				/* @include media('<=tablet') {
-                  width: 100vw;
-                  top: 100%;
-                  right: 0;
-               } */
+				@media screen and (max-width: 700px) {
+					width: 100vw;
+					top: calc(50vh / 3);
+					right: 0;
+				}
 			}
 
 			&:nth-child(3) {
 				right: 0;
 
-				/* @include media('<=tablet') {
-                  width: 100vw;
-                  top: 200%;
-                  right: 0;
-               } */
+				@media screen and (max-width: 700px) {
+					width: 100vw;
+					top: calc((50vh / 3) * 2);
+					right: 0;
+				}
 			}
 		}
 	}

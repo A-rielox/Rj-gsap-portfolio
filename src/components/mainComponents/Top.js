@@ -1,38 +1,48 @@
 import React, { useEffect } from "react";
 
 import RightArrow from "./RightArrow";
-
 import styled from "styled-components";
 
 import gsap from "gsap";
 
-const Top = ({ contactModalToggler }) => {
+const Top = ({ contactModalToggler, loaded }) => {
 	useEffect(() => {
-		const tlTop = gsap.timeline();
+		if (!loaded) {
+			const tlTop = gsap.timeline();
 
-		tlTop
-			.to(".span", {
+			tlTop
+				.to(".span", {
+					visibility: "visible",
+					duration: 0.1,
+				})
+				.from(".span", {
+					y: 100,
+					ease: "power4.out",
+					delay: 1,
+					stagger: {
+						amount: 1,
+					},
+					duration: 1.8,
+				})
+				.to(".btn", {
+					left: 0,
+					duration: 1,
+					delay: 3,
+				});
+
+			return () => {
+				tlTop.kill();
+			};
+		} else {
+			gsap.to(".span", {
 				visibility: "visible",
 				duration: 0.1,
-			})
-			.from(".span", {
-				y: 100,
-				ease: "power4.out",
-				delay: 1,
-				stagger: {
-					amount: 1,
-				},
-				duration: 1.8,
-			})
-			.to(".btn", {
-				left: 0,
-				duration: 1,
-				delay: 3,
 			});
-
-		return () => {
-			tlTop.kill();
-		};
+			gsap.to(".btn", {
+				left: 0,
+				duration: 0.1,
+			});
+		}
 	}, []);
 
 	return (
@@ -78,6 +88,14 @@ const Content = styled.div`
 	padding-left: 1rem;
 	width: 70%;
 
+	@media screen and (max-width: 1100px) {
+		width: 85%;
+	}
+
+	@media screen and (max-width: 500px) {
+		width: 95%;
+	}
+
 	.line {
 		height: 5rem;
 		font-size: 2rem;
@@ -95,10 +113,25 @@ const Content = styled.div`
 			position: absolute;
 			visibility: hidden;
 		}
+
+		@media screen and (max-width: 1100px) {
+			font-size: 1.5rem;
+		}
+
+		@media screen and (max-width: 700px) {
+			font-size: 1.2rem;
+			height: 4rem;
+		}
+
+		@media screen and (max-width: 500px) {
+			font-size: 1rem;
+			height: 3rem;
+		}
 	}
 
 	.btn-container {
 		overflow: hidden;
+		margin-top: 1rem;
 	}
 
 	.btn {
@@ -113,8 +146,15 @@ const Content = styled.div`
 		display: flex;
 		align-items: center;
 		font-weight: 600;
-
 		cursor: pointer;
+
+		@media screen and (max-width: 700px) {
+			font-size: 1.2rem;
+		}
+
+		@media screen and (max-width: 500px) {
+			font-size: 1rem;
+		}
 
 		svg {
 			margin-left: 16px;
@@ -127,6 +167,14 @@ const Content = styled.div`
 			border: 2px solid black;
 			border-radius: 100px;
 			transition: 0.4s ease-in-out;
+
+			@media screen and (max-width: 700px) {
+				padding: 6px;
+				height: 30px;
+				width: 30px;
+
+				border: 1px solid black;
+			}
 		}
 
 		&:hover {

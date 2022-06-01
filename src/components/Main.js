@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 
-// import LogoMainPage from "./subComponents/LogoMainPage";
 import ContactModal from "./modalComponents/ContactModal";
 
 import Top from "./mainComponents/Top";
@@ -21,12 +20,11 @@ const Main = ({ loaded }) => {
 	return (
 		<MainContainer>
 			<Container>
-				<IntroOverlay />
+				<IntroOverlay loaded={loaded} />
 
-				{/* <LogoMainPage color="light" /> */}
+				<Top loaded={loaded} contactModalToggler={contactModalToggler} />
 
-				<Top contactModalToggler={contactModalToggler} />
-				<Bottom />
+				<Bottom loaded={loaded} />
 			</Container>
 
 			{/* CONTACT-MODAL */}

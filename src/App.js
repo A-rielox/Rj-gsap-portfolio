@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-
+import gsap from "gsap";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { AnimatePresence } from "framer-motion";
-
 import GlobalStyle from "./globalStyles";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { lightTheme /* , DarkTheme */ } from "./components/Themes";
 
 // prettier-ignore
 import { Main, AboutPage, MySkillsPage, BlogPage, WorkPage } from "./components";
+import LogoMainPage from "./components/subComponents/LogoMainPage";
 
 function App() {
 	const location = useLocation();
@@ -18,7 +17,7 @@ function App() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoaded(true);
-		}, 4000);
+		}, 10000);
 	}, []);
 
 	return (
@@ -26,15 +25,15 @@ function App() {
 			<GlobalStyle />
 
 			<ThemeProvider theme={lightTheme}>
-				<AnimatePresence exitBeforeEnter>
-					<Routes location={location} key={location.pathname}>
-						<Route exact path="/" element={<Main loaded={loaded} />} />
-						<Route path="/about" element={<AboutPage />} />
-						<Route path="/blog" element={<BlogPage />} />
-						<Route path="/work" element={<WorkPage />} />
-						<Route path="/skills" element={<MySkillsPage />} />
-					</Routes>
-				</AnimatePresence>
+				<LogoMainPage loaded={loaded} />
+
+				<Routes location={location} key={location.pathname}>
+					<Route exact path="/" element={<Main loaded={loaded} />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/blog" element={<BlogPage />} />
+					<Route path="/work" element={<WorkPage />} />
+					<Route path="/skills" element={<MySkillsPage />} />
+				</Routes>
 			</ThemeProvider>
 		</>
 	);

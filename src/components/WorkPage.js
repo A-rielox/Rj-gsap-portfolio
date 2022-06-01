@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import LogoMainPage from './subComponents/LogoMainPage';
+// import LogoMainPage from './subComponents/LogoMainPage';
 
-import TheEndSign from './mySkillsComponents/TheEndSign';
-import { useViewportScroll } from 'framer-motion';
+import TheEndSign from "./mySkillsComponents/TheEndSign";
+import { useViewportScroll } from "framer-motion";
 
 const WorkPage = () => {
-   const { scrollYProgress } = useViewportScroll();
+	const { scrollYProgress } = useViewportScroll();
 
-   return (
-      <Wrapper>
-         <LogoMainPage color="light" />
-         WorkPage
-         <TheEndSign scrollprogress={scrollYProgress} />
-      </Wrapper>
-   );
+	return (
+		<Wrapper>
+			{/* <LogoMainPage color="light" /> */}
+			WorkPage
+			<TheEndSign scrollprogress={scrollYProgress} />
+		</Wrapper>
+	);
 };
 
 export default WorkPage;
 
 const Wrapper = styled.div`
-   height: 200vh;
+	height: 200vh;
 `;
