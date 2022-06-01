@@ -32,26 +32,28 @@ const MySkillsPage = () => {
 			animate={{ opacity: 1, transition: { duration: 1.5 } }}
 			exit={{ opacity: 0, transition: { duration: 0.5 } }}
 		>
-			<Content className="COOOOONTENT">
-				<LeftContent />
+			<div className="cap-width">
+				<Content className="COOOOONTENT">
+					<LeftContent />
 
-				<RightContent />
-			</Content>
+					<RightContent />
+				</Content>
 
-			<SwiperFront />
-			<SwiperBack />
+				<SwiperFront />
+				<SwiperBack />
 
-			<Svg
-				className="UpArrow"
-				onClick={scrollTop}
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
-				viewport={{ once: false, amount: 0.7 }}
-			>
-				<UpArrow width={70} height={70} />
-			</Svg>
+				<Svg
+					className="UpArrow"
+					onClick={scrollTop}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
+					viewport={{ once: false, amount: 0.7 }}
+				>
+					<UpArrow width={70} height={70} />
+				</Svg>
 
-			<TheEndSign scrollprogress={scrollYProgress} />
+				<TheEndSign scrollprogress={scrollYProgress} />
+			</div>
 		</MainContainer>
 	);
 };
@@ -67,6 +69,15 @@ const MainContainer = styled(motion.div)`
 	min-width: 100vw;
 	min-height: 100vh;
 	position: relative;
+
+	.cap-width {
+		max-width: 1300px;
+		margin: 0 auto;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	.SwiperBack {
 		display: none;
@@ -104,7 +115,7 @@ const MainContainer = styled(motion.div)`
 
 const Content = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 
 	gap: 5vw;
 	position: relative;

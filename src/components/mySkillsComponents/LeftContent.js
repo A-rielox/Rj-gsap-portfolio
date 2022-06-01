@@ -53,6 +53,8 @@ const LeftWrapper = styled.div`
 	width: 70vw;
 	position: relative;
 	z-index: 10;
+	display: flex;
+	justify-content: flex-end;
 
 	@media screen and (max-width: 700px) {
 		width: 90vw;
@@ -76,6 +78,7 @@ const Content = styled.div`
 
 	position: fixed;
 	width: 65vw;
+	max-width: 1100px;
 	/* min-height: 60vh; */
 	padding: calc(1rem + 2vw);
 

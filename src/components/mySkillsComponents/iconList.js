@@ -27,7 +27,7 @@ export const frontIconList = [
 	{ id: 9, icon: styledC, name: "styled components" },
 	{ id: 5, icon: mui, name: "mui" },
 	{ id: 6, icon: motion, name: "motion (from framer)" },
-	{ id: 7, icon: gsap, name: "gsap" },
+	{ id: 20, icon: gsap, name: "gsap" },
 ];
 
 export const backIconList = [
