@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import it from "../../assets/Images/it.jpg";
 
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
 
@@ -81,9 +80,11 @@ const Content = styled.div`
 	}
 
 	.box {
+		z-index: 2;
+		backdrop-filter: blur(5px);
 		height: fit-content;
 		border: 2px solid ${(props) => props.theme.text};
-		background-color: ${(props) => props.theme.body};
+
 		color: ${(props) => props.theme.text};
 		border-radius: 5px;
 		overflow: hidden;

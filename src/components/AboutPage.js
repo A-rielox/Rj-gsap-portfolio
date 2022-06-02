@@ -10,6 +10,7 @@ import Wind from "./aboutConponents/Wind";
 import UpArrow from "./mySkillsComponents/UpArrow";
 
 import ContactModalParticleComponent from "./modalComponents/ContactModalParticleComponent";
+import BackgroundTitle from "./subComponents/BackgroundTitle";
 
 const AboutPage = () => {
 	const ref = useRef(null);
@@ -129,6 +130,8 @@ const AboutPage = () => {
 				>
 					<UpArrow width={50} height={50} />
 				</SvgBackTop>
+
+				<BackgroundTitle text="ABOUT" top="70%" left="5rem" />
 			</MainContainer>
 		</ThemeProvider>
 	);

@@ -47,7 +47,6 @@ const Content = styled.div`
 	width: 20vw;
 	max-width: 350px;
 	margin-bottom: 5rem;
-
 	font-family: "Ubuntu Mono", monospace;
 `;
 

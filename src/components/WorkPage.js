@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { workList } from "./workComponents/workList";
 import SingleWork from "./workComponents/SingleWork";
+import BackgroundTitle from "./subComponents/BackgroundTitle";
 
 const WorkPage = () => {
 	return (
@@ -13,6 +14,8 @@ const WorkPage = () => {
 						return <SingleWork key={work.id} work={work} />;
 					})}
 				</Content>
+
+				<BackgroundTitle text="MY WORK" top="5rem" right="5rem" />
 			</div>
 		</MainContainer>
 	);

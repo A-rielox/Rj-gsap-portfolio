@@ -11,6 +11,7 @@ import UpArrow from "./mySkillsComponents/UpArrow";
 
 import SwiperFront from "./mySkillsComponents/SwiperFront";
 import SwiperBack from "./mySkillsComponents/SwiperBack";
+import BackgroundTitle from "./subComponents/BackgroundTitle";
 
 const MySkillsPage = () => {
 	const { scrollYProgress } = useViewportScroll();
@@ -53,6 +54,8 @@ const MySkillsPage = () => {
 				</Svg>
 
 				<TheEndSign scrollprogress={scrollYProgress} />
+
+				<BackgroundTitle text="MY SKILLS" top="5rem" left="5rem" />
 			</div>
 		</MainContainer>
 	);

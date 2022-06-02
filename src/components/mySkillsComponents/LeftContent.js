@@ -68,7 +68,7 @@ const Content = styled.div`
 	border: 2px solid ${(props) => props.theme.text};
 	color: ${(props) => props.theme.text};
 	/* background-color: ${(props) => props.theme.body}; */
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(5px);
 	transition: all 0.3s ease;
 
 	&:hover {
