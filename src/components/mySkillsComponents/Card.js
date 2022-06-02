@@ -43,10 +43,13 @@ const Wrapper = styled(motion.div)`
 	height: 20rem;
 	z-index: 2;
 
-	backdrop-filter: blur(5px);
+	background-color: ${(props) => props.theme.body};
 	border-radius: 10px;
-	-webkit-box-shadow: 0px 0px 16px 5px ${(props) => props.theme.text};
-	box-shadow: 0px 0px 16px 5px ${(props) => props.theme.text};
+
+	-webkit-box-shadow: 3px 3px 15px 5px
+		${(props) => `rgba(${props.theme.textRgba},0.46)`};
+	box-shadow: 3px 3px 15px 5px
+		${(props) => `rgba(${props.theme.textRgba},0.46)`};
 
 	&:not(:last-child) {
 		margin-bottom: 2rem;

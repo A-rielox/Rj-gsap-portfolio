@@ -21,7 +21,7 @@ const IntroOverlay = ({ loaded }) => {
 				.to(".overlay-bottom", {
 					width: 0,
 					ease: "expo.easeInOut",
-					delay: -0.8,
+					delay: -1,
 					stagger: {
 						amount: 0.8,
 					},
@@ -74,26 +74,13 @@ const Wrapper = styled.div`
 			background: black;
 			bottom: 0;
 			left: 0;
-			/* right: 0; */
-
-			/* @include media('<=tablet') {
-               width: 100vw;
-            } */
 
 			&:nth-child(2) {
 				left: 33.333%;
-
-				/* @include media('<=tablet') {
-                  display: none;
-               } */
 			}
 
 			&:nth-child(3) {
 				left: 66.666%;
-
-				/* @include media('<=tablet') {
-                  display: none;
-               } */
 			}
 		}
 	}

@@ -1,4 +1,6 @@
-import it from "../../assets/Images/it.jpg";
+import portfolio from "../../assets/Images/work-portfolio.jpeg";
+import pagina from "../../assets/Images/work-pagina.jpeg";
+import mern from "../../assets/Images/work-mern.jpeg";
 
 export const workList = [
 	{
@@ -12,7 +14,7 @@ export const workList = [
 			"Framer",
 			"GSAP",
 		],
-		imgSrc: it,
+		imgSrc: portfolio,
 		githubLink: "https://github.com/A-rielox/Rj-gsap-portfolio.git",
 		pageLink: "",
 	},
@@ -21,7 +23,7 @@ export const workList = [
 		name: "Web Page",
 		desc: "Project built with React and styled-components and the animations with Motion ( Framer ) and GSAP ( GreenSock )",
 		tecnologies: ["React", "styled-components", "Framer", "GSAP"],
-		imgSrc: it,
+		imgSrc: pagina,
 		githubLink: "https://github.com/A-rielox/R-pagina-aceites.git",
 		pageLink: "https://vida-y-esencias.netlify.app/",
 	},
@@ -40,7 +42,7 @@ export const workList = [
 			"mongoose",
 			"JWT",
 		],
-		imgSrc: it,
+		imgSrc: mern,
 		githubLink: "https://github.com/A-rielox/mui-socioil.git",
 		pageLink: "https://socioil-media.herokuapp.com/landing",
 	},
