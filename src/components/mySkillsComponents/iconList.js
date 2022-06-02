@@ -3,6 +3,7 @@ import axios from "../../assets/stack-icons/axios.svg";
 import css from "../../assets/stack-icons/css-3.svg";
 import express from "../../assets/stack-icons/express.svg";
 import github from "../../assets/stack-icons/github-icon.svg";
+import gsap from "../../assets/stack-icons/gsap.svg";
 import html from "../../assets/stack-icons/html-5.svg";
 import javascript from "../../assets/stack-icons/javascript.svg";
 import jwt from "../../assets/stack-icons/jwt-icon.svg";
@@ -17,7 +18,6 @@ import react from "../../assets/stack-icons/react.svg";
 import redux from "../../assets/stack-icons/redux.svg";
 import sass from "../../assets/stack-icons/sass.svg";
 import styledC from "../../assets/stack-icons/styled-components.png";
-import gsap from "../../assets/stack-icons/gsap.svg";
 
 export const frontIconList = [
 	{ id: 3, icon: html, name: "html-5" },
@@ -47,8 +47,3 @@ export const extraIconList = [
 	{ id: 15, icon: github, name: "github" },
 	{ id: 17, icon: npm, name: "npm" },
 ];
-
-//framer
-//git-icon
-//send grid
-// vscode

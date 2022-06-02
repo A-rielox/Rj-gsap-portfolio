@@ -35,6 +35,7 @@ const IntroOverlay = ({ loaded }) => {
 		} else {
 			gsap.to(".overlay", { css: { display: "none" }, duration: 0.01 });
 		}
+		// eslint-disable-next-line
 	}, []);
 
 	return (

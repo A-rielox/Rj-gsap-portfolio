@@ -25,6 +25,7 @@ const Bottom = ({ loaded }) => {
 				tlDown.kill();
 			};
 		}
+		// eslint-disable-next-line
 	}, []);
 
 	return (
@@ -118,18 +119,10 @@ const Content = styled.div`
 				height: calc(50vh / 3);
 			}
 
-			/* @include media("<=tablet") {
-				width: 100vw;
-			}
-			@include media("<=phone") {
-				padding: 16px;
-			} */
-
 			span {
 				margin-top: 156px;
 				font-size: 1.6rem;
 				opacity: 0.8;
-				/* color: white; */
 				color: ${(props) => props.theme.body};
 				font-weight: 600;
 
@@ -148,7 +141,6 @@ const Content = styled.div`
 				line-height: 3.4rem;
 				width: 85%;
 				margin-top: 16px;
-				/* color: white; */
 				color: ${(props) => props.theme.body};
 
 				font-family: "Ubuntu Mono", monospace;

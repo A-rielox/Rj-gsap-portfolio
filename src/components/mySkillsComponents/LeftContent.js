@@ -49,7 +49,6 @@ const LeftContent = () => {
 export default LeftContent;
 
 const LeftWrapper = styled.div`
-	/* border: 4px solid blue; */
 	width: 70vw;
 	position: relative;
 	z-index: 10;
@@ -67,7 +66,6 @@ const LeftWrapper = styled.div`
 const Content = styled.div`
 	border: 2px solid ${(props) => props.theme.text};
 	color: ${(props) => props.theme.text};
-	/* background-color: ${(props) => props.theme.body}; */
 	backdrop-filter: blur(5px);
 	transition: all 0.3s ease;
 

@@ -55,6 +55,7 @@ const Menu = ({ menuState }) => {
 				},
 			});
 		}
+		// eslint-disable-next-line
 	}, [menuState]);
 	return (
 		<MainContainer className="MENU---------">
@@ -131,7 +132,6 @@ const MainContainer = styled.section`
 		width: 100%;
 
 		.menu-secondary-background-color {
-			/* background: $black; */
 			background: #36254e;
 			top: 0;
 			bottom: 0;
@@ -140,13 +140,11 @@ const MainContainer = styled.section`
 			position: fixed;
 			height: 100%;
 			width: 100%;
-			/* z-index: -1; */
 		}
 
 		.content {
 			position: relative;
 			background: #cf9ce2;
-			/* background: red; */
 			height: 100%;
 			overflow: hidden;
 
@@ -165,7 +163,6 @@ const MainContainer = styled.section`
 					overflow: hidden;
 					position: relative;
 					height: 125px;
-					/* width: 700px; */
 					width: 300px;
 
 					display: block;
@@ -194,7 +191,6 @@ const MainContainer = styled.section`
 
 				span {
 					display: flex;
-					/* white-space: nowrap; */
 				}
 
 				.beat {

@@ -43,6 +43,7 @@ const Top = ({ contactModalToggler, loaded }) => {
 				duration: 0.1,
 			});
 		}
+		// eslint-disable-next-line
 	}, []);
 
 	return (
@@ -103,7 +104,6 @@ const Content = styled.div`
 		font-weight: 700;
 		z-index: 10;
 		color: white;
-		/* color: ${(props) => props.theme.text}; */
 		mix-blend-mode: difference; /* ⭐⭐⭐ */
 
 		position: relative;
@@ -141,7 +141,6 @@ const Content = styled.div`
 		z-index: 2;
 
 		font-size: 1.6rem;
-		/* color: ${(props) => props.theme.text}; */
 		color: black;
 		display: flex;
 		align-items: center;

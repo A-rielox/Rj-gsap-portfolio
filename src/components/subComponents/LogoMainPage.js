@@ -16,6 +16,7 @@ const LogoMainPage = ({ loaded }) => {
 		if (!initialLoad) {
 			setMenuState(!menuState);
 		}
+		// eslint-disable-next-line
 	}, [location]);
 
 	useEffect(() => {

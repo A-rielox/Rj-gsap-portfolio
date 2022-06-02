@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme /* , DarkTheme */ } from "./components/Themes";
 
 // prettier-ignore
-import { Main, AboutPage, MySkillsPage, BlogPage, WorkPage } from "./components";
+import { Main, AboutPage, MySkillsPage,  WorkPage } from "./components";
 import LogoMainPage from "./components/subComponents/LogoMainPage";
 
 function App() {
@@ -29,7 +29,6 @@ function App() {
 				<Routes location={location} key={location.pathname}>
 					<Route exact path="/" element={<Main loaded={loaded} />} />
 					<Route path="/about" element={<AboutPage />} />
-					<Route path="/blog" element={<BlogPage />} />
 					<Route path="/work" element={<WorkPage />} />
 					<Route path="/skills" element={<MySkillsPage />} />
 				</Routes>
