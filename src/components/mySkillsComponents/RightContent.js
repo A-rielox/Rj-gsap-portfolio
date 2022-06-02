@@ -32,7 +32,6 @@ const RightContent = () => {
 export default RightContent;
 
 const RightWrapper = styled.div`
-	/* border: 4px solid green; */
 	width: 20vw;
 	position: relative;
 
@@ -45,14 +44,6 @@ const RightWrapper = styled.div`
 `;
 
 const Content = styled.div`
-	/* border: 2px solid ${(props) => props.theme.text}; */
-	/* color: ${(props) => props.theme.text}; */
-	/* background-color: ${(props) => props.theme.body}; */
-
-	/*  */
-	/*  */
-	/*  */
-
 	width: 20vw;
 	max-width: 350px;
 	margin-bottom: 5rem;
