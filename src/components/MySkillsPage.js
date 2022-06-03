@@ -50,7 +50,7 @@ const MySkillsPage = () => {
 					whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
 					viewport={{ once: false, amount: 0.7 }}
 				>
-					<UpArrow width={70} height={70} />
+					<UpArrow width={50} height={50} />
 				</Svg>
 
 				<TheEndSign scrollprogress={scrollYProgress} />
@@ -123,15 +123,17 @@ const Content = styled.div`
 	gap: 5vw;
 	position: relative;
 
-	padding-top: 10rem; // padding top 💥
+	padding-top: 7rem; // padding top 💥
 	padding-left: 5vw;
 	padding-right: 5vw;
+
+	@media screen and (min-width: 1200px) {
+		padding-top: 10rem;
+	}
 
 	@media screen and (max-width: 700px) {
 		justify-content: center;
 		align-items: flex-start;
-
-		padding-top: 7rem;
 	}
 `;
 

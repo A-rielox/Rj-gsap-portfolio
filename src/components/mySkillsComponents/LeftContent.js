@@ -78,7 +78,8 @@ const Content = styled.div`
 	width: 65vw;
 	max-width: 1100px;
 	/* min-height: 60vh; */
-	padding: calc(1rem + 2vw);
+	/* padding: calc(1rem + 2vw); */
+	padding: 2rem;
 
 	font-family: "Ubuntu Mono", monospace;
 	display: flex;
@@ -91,6 +92,7 @@ const Content = styled.div`
 	@media screen and (max-width: 700px) {
 		position: relative;
 		width: 100vw;
+		padding: 1rem;
 	}
 `;
 
@@ -98,7 +100,8 @@ const Title = styled.h2`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: calc(1em + 1vw);
+	/* font-size: calc(1em + 1vw); */
+	font-size: 2rem;
 
 	${Content}:hover & {
 		& > * {
@@ -109,12 +112,22 @@ const Title = styled.h2`
 	& > *:first-child {
 		margin-right: 1rem;
 	}
+
+	@media screen and (max-width: 700px) {
+		font-size: 1.5rem;
+	}
 `;
 
 const Description = styled.div`
 	color: ${(props) => props.theme.text};
-	font-size: calc(0.6em + 1vw);
+	/* font-size: calc(0.6em + 1vw); */
+	font-size: 1.2rem;
 	padding: 0.5rem 0;
+
+	@media screen and (max-width: 700px) {
+		font-size: 0.9rem;
+		padding: 0.3rem 0;
+	}
 
 	${Content}:hover & {
 		color: ${(props) => props.theme.body};
@@ -135,6 +148,11 @@ const Divider = styled.span`
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	background-color: ${(props) => props.theme.text};
+
+	@media screen and (max-width: 700px) {
+		margin-top: 0.7rem;
+		margin-bottom: 0.7rem;
+	}
 
 	${Content}:hover & {
 		background-color: ${(props) => props.theme.body};

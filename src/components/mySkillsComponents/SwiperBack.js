@@ -53,16 +53,16 @@ const Wrapper = styled.div`
 		right: 20%;
 
 		@media screen and (max-width: 600px) {
-			width: 120px;
-			height: 120px;
+			width: 100px;
+			height: 100px;
 			right: 15%;
-			bottom: 6rem;
+			bottom: 3rem;
 		}
 
 		@media screen and (max-width: 400px) {
-			width: 70px;
-			height: 70px;
-			bottom: 3rem;
+			width: 60px;
+			height: 60px;
+			bottom: 2rem;
 		}
 	}
 
