@@ -8,7 +8,7 @@ const items = [
 		position: "Diseño de experimentos.",
 		place: "Monterrey, México.",
 		icon: <GiMiner />,
-		desc: "FICER (Facultad Ciencias Físico-Matemáticas, UANL) - Se solicitaba el diseño de un experimento relacionado a un principio físico, mi tarea era participar en este diseño teniendo como resultado la construcción de un equipo que demostrara el tema planteado.",
+		desc: "FICER - Se solicitaba el diseño de un experimento relacionado a un principio físico, mi tarea era participar en este diseño teniendo como resultado la construcción de un equipo que demostrara el tema planteado.",
 	},
 	{
 		id: 2,
@@ -24,7 +24,7 @@ const items = [
 		position: "Síntesis y caracterización de compuestos",
 		place: "Monterrey, México",
 		icon: <GiMiner />,
-		desc: "Escuela de estudios superiores de posgrado, Laboratorio de Materiales II - Diseño de experimentos, síntesis y caracterización. - Inicialmente realizaba trabajos matemáticos y estadísticos de los proyectos. Posteriormente comencé a realizar el diseño experimental para la síntesis de compuestos orgánicos. Los tres últimos años junto con estas responsabilidades realizaba síntesis y caracterización de varios compuestos organometálicos, además de llevar a cabo mi proyecto de tesis.",
+		desc: "Escuela de estudios superiores de posgrado (Facultad Ciencias Químicas, UANL)  - Diseño de experimentos, síntesis y caracterización. - Inicialmente realizaba trabajos matemáticos y estadísticos de los proyectos. Posteriormente comencé a realizar el diseño experimental para la síntesis de compuestos orgánicos. Los tres últimos años junto con estas responsabilidades realizaba síntesis y caracterización de varios compuestos organometálicos, además de llevar a cabo mi proyecto de tesis.",
 	},
 	{
 		id: 4,
@@ -40,7 +40,7 @@ const items = [
 		position: "Diseño de experimentos, síntesis y caracterización.",
 		place: "Monterrey, México",
 		icon: <GiMiner />,
-		desc: "Escuela de estudios superiores de posgrado, Laboratorio de Almacenamiento y Conversión de Energía (Facultad Ciencias Químicas, UANL) - Síntesis y caracterización de compuestos inorgánicos, armado y caracterización de baterías recargables.",
+		desc: "Escuela de estudios superiores de posgrado (Facultad Ciencias Químicas, UANL) - Síntesis y caracterización de compuestos inorgánicos, armado y caracterización de baterías recargables.",
 	},
 	{
 		id: 6,
