@@ -16,7 +16,7 @@ export const workList = [
 		],
 		imgSrc: portfolio,
 		githubLink: "https://github.com/A-rielox/Rj-gsap-portfolio.git",
-		pageLink: "",
+		pageLink: "https://ariel-godoy.netlify.app/",
 	},
 	{
 		id: 2,

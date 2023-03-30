@@ -8,33 +8,36 @@ import { lightTheme /* , DarkTheme */ } from "./components/Themes";
 // prettier-ignore
 import { Main, AboutPage, MySkillsPage,  WorkPage } from "./components";
 import LogoMainPage from "./components/subComponents/LogoMainPage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
-	const location = useLocation();
+  const location = useLocation();
 
-	const [loaded, setLoaded] = useState(false);
-	useEffect(() => {
-		setTimeout(() => {
-			setLoaded(true);
-		}, 10000);
-	}, []);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 10000);
+  }, []);
 
-	return (
-		<>
-			<GlobalStyle />
+  return (
+    <>
+      <GlobalStyle />
 
-			<ThemeProvider theme={lightTheme}>
-				<LogoMainPage loaded={loaded} />
+      <ThemeProvider theme={lightTheme}>
+        <LogoMainPage loaded={loaded} />
 
-				<Routes location={location} key={location.pathname}>
-					<Route exact path="/" element={<Main loaded={loaded} />} />
-					<Route path="/about" element={<AboutPage />} />
-					<Route path="/work" element={<WorkPage />} />
-					<Route path="/skills" element={<MySkillsPage />} />
-				</Routes>
-			</ThemeProvider>
-		</>
-	);
+        <ScrollToTop>
+          <Routes location={location} key={location.pathname}>
+            <Route exact path="/" element={<Main loaded={loaded} />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/skills" element={<MySkillsPage />} />
+          </Routes>
+        </ScrollToTop>
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default App;
