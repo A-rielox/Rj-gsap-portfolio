@@ -8,33 +8,37 @@ const LeftContent = () => {
         <Title>Full Stack Developer</Title>
 
         <Description>
-          I love developing "FullStack" web applications, either in Mern stack
-          or C# ( .Net ) and Angular, I work in:
+          I love developing "FullStack" web applications, either in C# ( .Net )
+          and Angular or Mern stack, I work in:
         </Description>
+
         <Description>
           <strong>Frontend</strong>
           <p>With Html, Css or Sass and Js everyday.</p>
         </Description>
-        <Description>
-          <p>
-            With React, I give the styles with Styled-components. I like to use
-            the MUI Framework ( V5+ ) and make the animations with Keyframes,
-            Motion ( by Framer ) and GSAP ( GreenSock ).
-          </p>
 
+        <Description>
           <p>
             With Angular, I love using TypeScript and the CSS frameworks I use
             the most are Bulma, Semantic UI and PrimeNG.
           </p>
-        </Description>
-        <Description>
-          <strong>Backend</strong>
-          <p>I work with Node and Express, using mongoDB as database</p>
 
           <p>
-            Or C# in .Net, usually working with SQL Server through Entity
+            With React, I give the styles with Styled-components. I like to use
+            the MUI Framework ( V5+ ) and make the animations with Keyframes,
+            Motion ( by Framer ) or GSAP ( GreenSock ).
+          </p>
+        </Description>
+
+        <Description>
+          <strong>Backend</strong>
+
+          <p>
+            I work with C# in .Net, usually with SQL Server through Entity
             Framework.
           </p>
+
+          <p>Or Node and Express, using mongoDB as database</p>
         </Description>
 
         <Divider />
@@ -54,7 +58,7 @@ const LeftContent = () => {
 export default LeftContent;
 
 const LeftWrapper = styled.div`
-  width: 70vw;
+  width: 75vw;
   position: relative;
   z-index: 10;
   display: flex;
@@ -80,7 +84,8 @@ const Content = styled.div`
   }
 
   position: fixed;
-  width: 65vw;
+  /* width: 65vw; */
+  width: 70vw;
   max-width: 1100px;
   /* min-height: 60vh; */
   /* padding: calc(1rem + 2vw); */
@@ -126,7 +131,7 @@ const Title = styled.h2`
 const Description = styled.div`
   color: ${(props) => props.theme.text};
   /* font-size: calc(0.6em + 1vw); */
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   padding: 0.5rem 0;
 
   @media screen and (max-width: 700px) {

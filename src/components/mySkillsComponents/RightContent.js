@@ -32,7 +32,7 @@ const RightContent = () => {
 export default RightContent;
 
 const RightWrapper = styled.div`
-  width: 20vw;
+  width: 15vw;
   position: relative;
 
   @media screen and (min-width: 1600px) {
@@ -44,7 +44,7 @@ const RightWrapper = styled.div`
 `;
 
 const Content = styled.div`
-  width: 20vw;
+  width: 15vw;
   max-width: 350px;
   margin-bottom: 5rem;
   font-family: "Ubuntu Mono", monospace;
