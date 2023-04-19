@@ -19,12 +19,12 @@ export const workList = [
       ],
       imgSrc: angularCSharp,
       githubLink: "https://github.com/A-rielox/LaApp",
-      pageLink: "https://ariel-godoy.netlify.app/",
+      pageLink: "https://socioil-app.fly.dev/",
    },
    {
       id: 2,
       name: "Portfolio",
-      desc: "This portfolio was built with React and styled-components and the animations with Motion ( Framer ) and GSAP ( GreenSock )",
+      desc: "This portfolio was built with React and styled-components giving the animations with Motion ( Framer ) and GSAP ( GreenSock )",
       tecnologies: [
          "React",
          "react-router-dom",
@@ -39,7 +39,7 @@ export const workList = [
    {
       id: 3,
       name: "Web Page",
-      desc: "Project built with React and styled-components and the animations with Motion ( Framer ) and GSAP ( GreenSock )",
+      desc: "Project built with React and styled-components giving the animations with Motion ( Framer ) and GSAP ( GreenSock )",
       tecnologies: ["React", "styled-components", "Framer", "GSAP"],
       imgSrc: pagina,
       githubLink: "https://github.com/A-rielox/R-pagina-aceites.git",
@@ -48,7 +48,7 @@ export const workList = [
    {
       id: 4,
       name: "MERN Stack Aplication",
-      desc: "Project built in Frontend with React, styled-components, Motion ( Framer ) and MUI ( Material UI V5 ), in Backend with Node, Express, mongoDB and mongoose, handling application security with JWT",
+      desc: "Project built in Frontend with React, styled-components, Motion ( Framer ) and MUI ( Material UI V5 ), in Backend with Node, Express, mongoDB and mongoose, handling application security with JWT. ( currently switching from heroku to fly.io )",
       tecnologies: [
          "React",
          "MUI",
@@ -62,6 +62,6 @@ export const workList = [
       ],
       imgSrc: mern,
       githubLink: "https://github.com/A-rielox/mui-socioil.git",
-      pageLink: "https://socioil-media.herokuapp.com/landing",
+      pageLink: "#",
    },
 ];

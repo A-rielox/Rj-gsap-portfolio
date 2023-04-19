@@ -91,7 +91,7 @@ const Content = styled.div`
       position: relative;
       background: #36254e;
       /* background: black; */
-      cursor: pointer;
+      /* cursor: pointer; */
 
       @media screen and (max-width: 700px) {
          height: calc(50vh / 3);
